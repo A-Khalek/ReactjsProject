@@ -10,7 +10,7 @@ class RecentProjects extends Component {
                     <h2 className="serviceNameTitle">RECENT PROJECTS</h2>
                     <Row>
                         <Col sm={12} md={6} lg={4}>
-                            <Card style={{ width: '18rem' }}>
+                            <Card className="projectCard">
                                 <Card.Img variant="top" src={recProjectImg} />
                                 <Card.Body>
                                     <Card.Title>Card Title</Card.Title>
@@ -24,7 +24,7 @@ class RecentProjects extends Component {
                         </Col>
 
                         <Col sm={12} md={6} lg={4}>
-                            <Card style={{ width: '18rem' }}>
+                            <Card className="projectCard">
                                 <Card.Img variant="top" src={recProjectImg} />
                                 <Card.Body>
                                     <Card.Title>Card Title</Card.Title>
@@ -38,7 +38,7 @@ class RecentProjects extends Component {
                         </Col >
 
                         <Col sm={12} md={6} lg={4}>
-                            <Card style={{ width: '18rem' }}>
+                            <Card className="projectCard">
                                 <Card.Img variant="top" src={recProjectImg} />
                                 <Card.Body>
                                     <Card.Title>Card Title</Card.Title>
