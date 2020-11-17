@@ -1,5 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import  {Col, Container,Card, Row} from "react-bootstrap";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCheckCircle} from "@fortawesome/free-solid-svg-icons/faCheckCircle";
 
 class Summary extends Component {
     render() {
@@ -25,14 +27,14 @@ class Summary extends Component {
                                 </Col>
 
                                 <Col  lg={4} md={6} sm={12}>
-                                    <Card style={{ width: '18rem' }}>
+                                    <Card className="workCard">
                                         <Card.Body>
                                             <Card.Title className="cardTitle">How i work</Card.Title>
                                             <Card.Text>
-                                                <p className="cardSubTitle"> Requirement Gathering </p>
-                                                <p className="cardSubTitle">  System Analysis  </p>
-                                                <p className="cardSubTitle"> Coding Testing </p>
-                                                <p className="cardSubTitle">  Implementation </p>
+                                                <p className="cardSubTitle text-justify "><FontAwesomeIcon className="iconBullet" icon={faCheckCircle} /> Requirement Gathering </p>
+                                                <p className="cardSubTitle text-justify "><FontAwesomeIcon className="iconBullet" icon={faCheckCircle} /> System Analysis  </p>
+                                                <p className="cardSubTitle text-justify "><FontAwesomeIcon className="iconBullet" icon={faCheckCircle} /> Coding Testing </p>
+                                                <p className="cardSubTitle text-justify "><FontAwesomeIcon className="iconBullet" icon={faCheckCircle} /> Implementation </p>
                                             </Card.Text>
                                         </Card.Body>
                                     </Card>
