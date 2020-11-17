@@ -1,18 +1,45 @@
 import React, {Component,Fragment} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
+import {Bar, ResponsiveContainer, XAxis,Tooltip} from "recharts";
+import BarChart from "recharts/lib/chart/BarChart";
 
 class Analysis extends Component {
+    
+    constructor() {
+        super();
+        this.state={
+            data:[
+                {Technology:'JAVA',Project:100},
+                {Technology:'KOTLIN',Project:40},
+                {Technology:'SQL',Project:100},
+                {Technology:'BOOT',Project:80},
+                {Technology:'JQUERY',Project:95},
+                {Technology:'REACT',Project:60},
+                {Technology:'PHP',Project:65},
+                {Technology:'ANGULAR',Project:100}
+            ]
+        }
+    }
+    
     render() {
+        var blue='rgba(0,115,230,0.8)';
         return (
             <div>
               <Fragment>
                   <Container className="text-center">
                       <h1 className="serviceNameTitle">Technology Used</h1>
                       <Row>
-                          <Col lg={6} md={12} sm={12}>
-                              <div>
-                                
-                              </div>
+                          <Col style={{width:'100%', height:'300px'}} lg={6} md={12} sm={12}>
+                              <ResponsiveContainer>
+                                  <BarChart width={100} height={300} data={this.state.data} >
+                                      <XAxis dataKey="Technology"/>
+                                      <Tooltip/>
+                                      <Bar dataKey="Project" fill={blue}>
+
+                                      </Bar>
+                                  </BarChart>
+                              </ResponsiveContainer>
+
                           </Col>
                           <Col lg={6} md={12} sm={12}>
                               <div>
