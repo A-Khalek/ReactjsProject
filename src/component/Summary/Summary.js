@@ -15,6 +15,7 @@ class Summary extends Component {
                             <Row className="text-center ">
                                 <Col lg={8} md={6} sm={12}>
                                     <Row className="countSection" >
+
                                         <Col >
                                             <h1 className="countNumber">
                                                 <CountUp start={0} end={100}>
@@ -28,6 +29,7 @@ class Summary extends Component {
                                             <h4 className="countTitle">Total Projects</h4>
                                             <hr className="bg-white w-25"/>
                                         </Col>
+
                                         <Col>
                                             <h1 className="countNumber">
                                                 <CountUp start={0} end={100}>
@@ -41,6 +43,7 @@ class Summary extends Component {
                                             <h4 className="countTitle">Total Client</h4>
                                             <hr className="bg-white w-25"/>
                                         </Col>
+                                        
                                     </Row>
                                 </Col>
 
