@@ -109,7 +109,7 @@
 }
 .summaryBanner{
     background-image: url("../image/banner.jpg");
-    min-height: 500px;
+    min-height: 350px;
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -117,10 +117,40 @@
 }
 .summaryBannerOverlay{
     position: absolute;
-    min-height: 500px;
+    min-height: 350px;
     width: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.7);
 }
 .summary{
     margin-top: 5rem;
+}
+.countSection{
+    margin-top: 15%;
+}
+.countNumber{
+    color: #ffffff;
+    font-family: 'Montserreat', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+}
+.countTitle{
+    color: #ffffff;
+    font-family:'Montserreat', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+.cardTitle{
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000000;
+}
+.cardSubTitle{
+    font-family:'Montserreat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+}
+.card{
+    margin-top: 10%;
 }
