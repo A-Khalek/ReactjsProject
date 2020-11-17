@@ -170,3 +170,13 @@
 .projectCard:hover{
     box-shadow: 0 0 8px 0 rgba(0,115,230,0.2);
 }
+.projectCardTitle{
+    font-family: 'Montserreat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+.projectCardTitleDesc{
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}

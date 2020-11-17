@@ -13,8 +13,8 @@ class RecentProjects extends Component {
                             <Card className="projectCard">
                                 <Card.Img variant="top" src={recProjectImg} />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
+                                    <Card.Title className="projectCardTitle">Card Title</Card.Title>
+                                    <Card.Text className="projectCardTitleDesc">
                                         Some quick example text to build on the card title and make up the bulk of
                                         the card's content.
                                     </Card.Text>
@@ -27,8 +27,8 @@ class RecentProjects extends Component {
                             <Card className="projectCard">
                                 <Card.Img variant="top" src={recProjectImg} />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
+                                    <Card.Title className="projectCardTitle">Card Title</Card.Title>
+                                    <Card.Text className="projectCardTitleDesc">
                                         Some quick example text to build on the card title and make up the bulk of
                                         the card's content.
                                     </Card.Text>
@@ -41,8 +41,8 @@ class RecentProjects extends Component {
                             <Card className="projectCard">
                                 <Card.Img variant="top" src={recProjectImg} />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
+                                    <Card.Title className="projectCardTitle">Card Title</Card.Title>
+                                    <Card.Text className="projectCardTitleDesc">
                                         Some quick example text to build on the card title and make up the bulk of
                                         the card's content.
                                     </Card.Text>
