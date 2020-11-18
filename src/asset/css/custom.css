@@ -269,3 +269,25 @@
     color: #0073e6;
     text-decoration: none;
 }
+.copyrightSection{
+    padding: 25px 25px 25px 25px;
+    background-color: #0073e6;
+}
+.copyrightLink{
+    font-family: 'Montserreat', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #ffffff;
+    text-decoration: none;
+}
+.copyrightLink:hover{
+    color: #000000;
+    text-decoration: none;
+}
+
+
+
+
+
+
+

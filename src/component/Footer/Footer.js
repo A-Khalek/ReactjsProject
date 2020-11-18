@@ -36,6 +36,9 @@ class Footer extends Component {
                         </Col>
                     </Row>
                 </Container>
+                <Container fluid={true} className="text-center copyrightSection">
+                    <a href="#" className="copyrightLink">khalek.com &copy; 2020-21</a>
+                </Container>
             </Fragment>
         );
     }
