@@ -227,3 +227,20 @@
     font-size: 18px;
     font-weight: 400;
 }
+.circleImg{
+    height: 100px;
+    width: 100px;
+    margin: 0px auto;
+    border: 1px solid #0073e6;
+    border-radius: 50%;
+}
+.clientDesc {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+.clientName{
+    font-family:'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+}
