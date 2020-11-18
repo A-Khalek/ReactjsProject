@@ -180,3 +180,26 @@
     font-size: 14px;
     font-weight: 400;
 }
+.courseImg{
+    width: 100%;
+}
+.courseTitle{
+    font-family: 'Montserreat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+.courseDesc {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+.courseDetails{
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #0073e6;
+}
+.courseDetails:hover{
+    text-decoration: none;
+}

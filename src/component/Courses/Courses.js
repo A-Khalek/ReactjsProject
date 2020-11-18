@@ -11,48 +11,55 @@ class Courses extends Component {
                     <Row>
                         <Col lg={6} md={12} sm={12}>
                            <Row>
-                               <Col lg={6} md={12} sm={12}><h4>Image</h4></Col>
                                <Col lg={6} md={12} sm={12}>
-                                   <h4>Web Development</h4>
-                                   <p>I build native and cross platform mobile app for your business</p>
-                                   <button variant="primary">Details</button>
+                                   <img className="courseImg" src={courseImg}/>
+                               </Col>
+                               <Col lg={6} md={12} sm={12}>
+                                   <h4 className="courseTitle text-justify"> Web Development</h4>
+                                   <p className="courseDesc text-justify">I build native and cross platform mobile app for your business</p>
+                                   <a className="courseDetails float-left" href="#">Details</a>
                                </Col>
                            </Row>
                         </Col>
                         <Col lg={6} md={12} sm={12}>
                             <Row>
-                                <Col lg={6} md={12} sm={12}><h4>Image</h4></Col>
                                 <Col lg={6} md={12} sm={12}>
-                                    <h4>Web Development</h4>
-                                    <p>I build native and cross platform mobile app for your business</p>
-                                    <button variant="primary">Details</button>
+                                    <img className="courseImg" src={courseImg}/>
+                                </Col>
+                                <Col  lg={6} md={12} sm={12}>
+                                    <h4 className="courseTitle text-justify">Web Development</h4>
+                                    <p className="courseDesc text-justify">I build native and cross platform mobile app for your business</p>
+                                    <a className="courseDetails float-left" href="#">Details</a>
                                 </Col>
                             </Row>
                         </Col>
-                    </Row>
-                    <Row>
-                        <Col lg={6} md={12} sm={12}>
-                            <Row>
-                                <Col lg={6} md={12} sm={12}><h4>Image</h4></Col>
-                                <Col lg={6} md={12} sm={12}>
-                                    <h4>Web Development</h4>
-                                    <p>I build native and cross platform mobile app for your business</p>
-                                    <button variant="primary">Details</button>
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col lg={6} md={12} sm={12}>
-                            <Row>
-                                <Col lg={6} md={12} sm={12}><h4>Image</h4></Col>
-                                <Col lg={6} md={12} sm={12}>
-                                    <h4>Web Development</h4>
-                                    <p>I build native and cross platform mobile app for your business</p>
-                                    <button variant="primary">Details</button>
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row>
 
+                        <Col lg={6} md={12} sm={12}>
+                            <Row>
+                                <Col lg={6} md={12} sm={12}>
+                                    <img className="courseImg" src={courseImg}/>
+                                </Col>
+                                <Col  lg={6} md={12} sm={12}>
+                                    <h4 className="courseTitle text-justify">Web Development</h4>
+                                    <p className="courseDesc text-justify">I build native and cross platform mobile app for your business</p>
+                                    <a className="courseDetails float-left" href="#">Details</a>
+                                </Col>
+                            </Row>
+                        </Col>
+
+                        <Col lg={6} md={12} sm={12}>
+                            <Row>
+                                <Col lg={6} md={12} sm={12}>
+                                    <img className="courseImg" src={courseImg}/>
+                                </Col>
+                                <Col  lg={6} md={12} sm={12}>
+                                    <h4 className="courseTitle text-justify">Web Development</h4>
+                                    <p className="courseDesc text-justify">I build native and cross platform mobile app for your business</p>
+                                    <a className="courseDetails float-left" href="#">Details</a>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
                 </Container>
             </Fragment>
         );
