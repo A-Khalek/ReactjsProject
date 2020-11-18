@@ -2,7 +2,9 @@ import React, {Component, Fragment} from 'react';
 import {Col, Container, Row, Button, Modal} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlayCircle} from "@fortawesome/free-solid-svg-icons/faPlayCircle";
-
+import "video-react/dist/video-react.css";
+import {Player,BigPlayButton,ControlBar,ReplayControl} from 'video-react';
+import videoPoster from '../../asset/image/videoSintel.png'
 
 class Video extends Component {
     constructor() {
@@ -12,7 +14,7 @@ class Video extends Component {
         }
     }
 
-    modalClose=()=>this.setState({show:false}) 
+    modalClose=()=>this.setState({show:false})
     modalOpen=()=>this.setState({show:true})
 
 
@@ -31,11 +33,17 @@ class Video extends Component {
                     </Row>
                 </Container>
                 {/*This is video modal section*/}
-                <Modal show={this.state.show} onHide={this.modalClose} animation={false}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal size="lg" show={this.state.show} onHide={this.modalClose} animation={false}>
+                   <Modal.Body>
+                        <Player poster={videoPoster} src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4">
+                            <BigPlayButton position="center" />
+                            <ControlBar autoHide={false}>
+                                <ReplayControl seconds={5} order={2.1} />
+                                <ReplayControl seconds={10} order={2.2} />
+                                <ReplayControl seconds={30} order={2.3} />
+                            </ControlBar>
+                        </Player>
+                    </Modal.Body>
                     <Modal.Footer>
                         <Button variant="primary" onClick={this.modalClose}>
                             Close
