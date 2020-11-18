@@ -12,8 +12,8 @@ class Video extends Component {
         }
     }
 
-    modalClose=()=>this.setState({show:'false'})
-    modalOpen=()=>this.setState({show:'true'})
+    modalClose=()=>this.setState({show:false}) 
+    modalOpen=()=>this.setState({show:true})
 
 
     render() {
@@ -31,13 +31,13 @@ class Video extends Component {
                     </Row>
                 </Container>
                 {/*This is video modal section*/}
-                <Modal show={this.state.show} onHide={this.modalClose}>
+                <Modal show={this.state.show} onHide={this.modalClose} animation={false}>
                     <Modal.Header closeButton>
                         <Modal.Title>Modal heading</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={this.modalClose}>
+                        <Button variant="primary" onClick={this.modalClose}>
                             Close
                         </Button>
                     </Modal.Footer>
