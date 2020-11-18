@@ -11,6 +11,7 @@ class TopNavigation extends Component {
         this.state={
             navBarTitle:"navTitle",
             navBarLogo:[whiteLogo],
+            navVariant: 'dark',
             navBack:"navBackground",
             navBarFont:"navItemColor"
         }
@@ -19,12 +20,12 @@ class TopNavigation extends Component {
     onScroll=()=>{
         if (window.scrollY>100){
             this.setState({navBarTitle:"navTitleScroll",navBarLogo:[blueLogo],navBack:"navBackgroundScroll",
-                navBarFont:"navItemColorScroll"})
+                navBarFont:"navItemColorScroll",navVariant:'light'})
 
         }
         else if (window.scrollY<100) {
             this.setState({navBarTitle:"navTitle",navBarLogo:[whiteLogo],navBack:"navBackground",
-                navBarFont:"navItemColor"})
+                navBarFont:"navItemColor",navVariant:'dark'})
         }
 
     }
@@ -36,7 +37,7 @@ class TopNavigation extends Component {
     render() {
         return (
             <>
-                <Navbar className={this.state.navBack} fixed="top" collapseOnSelect expand="lg"  variant="dark">
+                <Navbar className={this.state.navBack} fixed="top" collapseOnSelect expand="lg"  variant={this.state.navVariant}>
                     <Navbar.Brand href="#home" className={this.state.navBarTitle}><img src={this.state.navBarLogo}/> Md. Abdul Khalek</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
