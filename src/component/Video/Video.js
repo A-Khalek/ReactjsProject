@@ -37,11 +37,6 @@ class Video extends Component {
                    <Modal.Body>
                         <Player poster={videoPoster} src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4">
                             <BigPlayButton position="center" />
-                            <ControlBar autoHide={false}>
-                                <ReplayControl seconds={5} order={2.1} />
-                                <ReplayControl seconds={10} order={2.2} />
-                                <ReplayControl seconds={30} order={2.3} />
-                            </ControlBar>
                         </Player>
                     </Modal.Body>
                     <Modal.Footer>
