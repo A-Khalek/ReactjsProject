@@ -213,7 +213,9 @@
     color: #0073e6;
     font-size: 48px;
     font-weight: 600;
+    cursor: pointer;
 }
+
 .videoTitle{
     color: #0073e6;
     font-family: 'Montserreat', sans-serif;
@@ -222,6 +224,6 @@
 }
 .videoDesc{
     font-family: 'Raleway', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
 }
