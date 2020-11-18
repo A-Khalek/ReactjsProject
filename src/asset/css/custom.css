@@ -203,3 +203,25 @@
 .courseDetails:hover{
     text-decoration: none;
 }
+.videoCard{
+    box-shadow: 0 0 4px 0 rgba(0,115,230,0.2);
+    padding: 6rem 3rem 6rem 3rem;
+    margin: 50px auto;
+    background-color: #ffffff;
+}
+.playBtn{
+    color: #0073e6;
+    font-size: 48px;
+    font-weight: 600;
+}
+.videoTitle{
+    color: #0073e6;
+    font-family: 'Montserreat', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+.videoDesc{
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
