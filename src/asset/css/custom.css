@@ -286,8 +286,30 @@
 }
 
 
+.topPageBanner{
+    background-image: url("../image/banner.jpg");
+    min-height: 280px;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+}
+.topPageOverlay{
+    position: absolute;
+    min-height: 280px;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+}
+.topPageContent{
+    margin-top: 8rem;
+}
 
-
+.PageTitle{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 600;
+    color: white;
+    font-size: 28px;
+}
 
 
 
