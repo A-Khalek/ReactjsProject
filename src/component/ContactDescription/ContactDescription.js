@@ -8,9 +8,9 @@ class ContactDescription extends Component {
     render() {
         return (
             <Fragment>
-                <Container fluid={true} className="pt-5 pl-5">
+                <Container  className="pt-5 pl-0">
                     <Row>
-                        <Col lg={8} md={12} sm={12} className="pl-5">
+                        <Col lg={8} md={12} sm={12} className="pl-0">
                             <h2 className="serviceName">Quick Connect</h2>
                             <Form>
                                 <Form.Group controlId="formBasicEmail">

@@ -288,7 +288,7 @@
 
 .topPageBanner{
     background-image: url("../image/banner.jpg");
-    min-height: 280px;
+    min-height: 310px;
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -296,7 +296,7 @@
 }
 .topPageOverlay{
     position: absolute;
-    min-height: 280px;
+    min-height: 310px;
     width: 100%;
     background: rgba(0,0,0,0.5);
 }
