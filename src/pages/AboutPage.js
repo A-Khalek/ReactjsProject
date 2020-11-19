@@ -8,7 +8,7 @@ class AboutPage extends Component {
     render() {
         return (
             <Fragment>
-                <TopNavigation/>
+                <TopNavigation Title="About Me"/>
                 <PageTop pageTitle="About Me"/>
                 <AboutDescription/>
                 <Footer/>

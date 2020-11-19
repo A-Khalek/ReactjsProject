@@ -7,14 +7,15 @@ import blueLogo from '../../asset/image/navlogoScroll.svg'
 import {NavLink} from "react-router-dom";
 
 class TopNavigation extends Component {
-    constructor() {
+    constructor(props) {
         super();
         this.state={
             navBarTitle:"navTitle",
             navBarLogo:[whiteLogo],
             navVariant: 'dark',
             navBack:"navBackground",
-            navBarFont:"navItemColor"
+            navBarFont:"navItemColor",
+            pageTitle:props.Title
         }
     }
 
@@ -46,12 +47,13 @@ class TopNavigation extends Component {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link><NavLink className={this.state.navBarFont} to="/">HOME</NavLink></Nav.Link>
-                            <Nav.Link><NavLink className={this.state.navBarFont} to="/services">SEVICES</NavLink></Nav.Link>
-                            <Nav.Link><NavLink className={this.state.navBarFont} to="/course">COURSE</NavLink></Nav.Link>
-                            <Nav.Link><NavLink className={this.state.navBarFont} to="/portfolio">PRORTFOLIO</NavLink></Nav.Link>
-                            <Nav.Link><NavLink className={this.state.navBarFont} to="/contact">CONTACT</NavLink></Nav.Link>
-                            <Nav.Link><NavLink className={this.state.navBarFont} to="/about">ABOUT</NavLink></Nav.Link>
+                            <title>{this.state.pageTitle}</title>
+                            <Nav.Link><NavLink exact activeStyle={{color:'#00a8ee'}} className={this.state.navBarFont} to="/">HOME</NavLink></Nav.Link>
+                            <Nav.Link><NavLink exact activeStyle={{color:'#00a8ee'}} className={this.state.navBarFont} to="/services">SEVICES</NavLink></Nav.Link>
+                            <Nav.Link><NavLink exact activeStyle={{color:'#00a8ee'}} className={this.state.navBarFont} to="/course">COURSE</NavLink></Nav.Link>
+                            <Nav.Link><NavLink exact activeStyle={{color:'#00a8ee'}} className={this.state.navBarFont} to="/portfolio">PRORTFOLIO</NavLink></Nav.Link>
+                            <Nav.Link><NavLink exact activeStyle={{color:'#00a8ee'}} className={this.state.navBarFont} to="/contact">CONTACT</NavLink></Nav.Link>
+                            <Nav.Link><NavLink exact activeStyle={{color:'#00a8ee'}} className={this.state.navBarFont} to="/about">ABOUT</NavLink></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
