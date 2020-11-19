@@ -16,7 +16,7 @@ class Services extends Component {
                             <div className="serviceCard text-center">
                                 <img src={webLogo}/>
                                 <h2 className="serviceName">Web Development</h2>
-                                <p>Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</p>
+                                < p className="serviceDescription">Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</p>
                             </div>
                         </Col>
 
@@ -24,7 +24,7 @@ class Services extends Component {
                             <div className="serviceCard text-center">
                                 <img src={mobileLogo}/>
                                 <h2 className="serviceName">Mobile App Development</h2>
-                                <p>Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</p>
+                                <p className="serviceDescription">Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</p>
                             </div>
                         </Col>
 
@@ -32,7 +32,7 @@ class Services extends Component {
                             <div className="serviceCard text-center">
                                 <img src={graphicsLogo}/>
                                 <h2 className="serviceName">Graphics Design</h2>
-                                <p>Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</p>
+                                <p className="serviceDescription">Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</p>
                             </div>
                         </Col>
                     </Row>
