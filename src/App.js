@@ -5,16 +5,17 @@ import Footer from "./component/Footer/Footer";
 import PortfolioDescription from "./component/PortfolioDescription/PortfolioDescription";
 import PortfolioPage from "./pages/PortfolioPage";
 import ServicesDescription from "./component/ServicesDescription/ServicesDescription";
+import ServicePage from "./pages/ServicePage";
 
 
 function App() {
   return (
     <div >
-
-     <TopNavigation/>
-     <PageTop pageTitle="Portfolio"/>
-     <ServicesDescription/>
-      <Footer/>
+    <ServicePage/>
+     {/*<TopNavigation/>*/}
+     {/*<PageTop pageTitle="Portfolio"/>*/}
+     {/*<ServicesDescription/>*/}
+     {/* <Footer/>*/}
     </div>
   );
 }

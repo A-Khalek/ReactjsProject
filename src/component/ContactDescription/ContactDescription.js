@@ -35,7 +35,7 @@ class ContactDescription extends Component {
                             </Form>
                         </Col>
 
-                        <Col lg={4} md={12} sm={12} className="text-justify pl-0">
+                        <Col lg={4} md={12} sm={12} className="text-justify pl-3">
                             <h2 className="serviceName">Discuss Now</h2>
                             <p className="clientDesc">Address: E-36,Road-7, Arambag Residential Area , Pallabi,Mirpur, Dhaka 1216</p>
                             <p className="clientDesc"><FontAwesomeIcon icon={faEnvelope} /> khalek.raju.bd@gmail.com</p>
