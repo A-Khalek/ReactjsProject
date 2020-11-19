@@ -7,7 +7,9 @@ function App() {
   return (
     <Fragment>
         <BrowserRouter>
+
           <AppRoute/>
+
         </BrowserRouter>
     </Fragment>
   );
