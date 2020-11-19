@@ -1,16 +1,15 @@
-import React from 'react';
-import ServicePage from "./pages/ServicePage";
+import React, {Fragment} from 'react';
+import {BrowserRouter} from "react-router-dom";
+import AppRoute from "./route/AppRoute";
 
 
 function App() {
   return (
-    <div >
-    <ServicePage/>
-     {/*<TopNavigation/>*/}
-     {/*<PageTop pageTitle="Portfolio"/>*/}
-     {/*<ServicesDescription/>*/}
-     {/* <Footer/>*/}
-    </div>
+    <Fragment>
+        <BrowserRouter>
+          <AppRoute/>
+        </BrowserRouter>
+    </Fragment>
   );
 }
 

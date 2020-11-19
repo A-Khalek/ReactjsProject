@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import '../../asset/css/custom.css';
 import whiteLogo from '../../asset/image/navlogo.svg';
 import blueLogo from '../../asset/image/navlogoScroll.svg'
+import {NavLink} from "react-router-dom";
 
 class TopNavigation extends Component {
     constructor() {
@@ -45,12 +46,12 @@ class TopNavigation extends Component {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link className={this.state.navBarFont} href="#deets">HOME</Nav.Link>
-                            <Nav.Link className={this.state.navBarFont} href="#deets">SEVICES</Nav.Link>
-                            <Nav.Link className={this.state.navBarFont} href="#deets">COURSE</Nav.Link>
-                            <Nav.Link className={this.state.navBarFont} href="#deets">PRORTFOLIO</Nav.Link>
-                            <Nav.Link className={this.state.navBarFont} href="#deets">CONTACT</Nav.Link>
-                            <Nav.Link className={this.state.navBarFont} href="#deets">ABOUT</Nav.Link>
+                            <Nav.Link><NavLink className={this.state.navBarFont} to="/">HOME</NavLink></Nav.Link>
+                            <Nav.Link><NavLink className={this.state.navBarFont} to="/services">SEVICES</NavLink></Nav.Link>
+                            <Nav.Link><NavLink className={this.state.navBarFont} to="/course">COURSE</NavLink></Nav.Link>
+                            <Nav.Link><NavLink className={this.state.navBarFont} to="/portfolio">PRORTFOLIO</NavLink></Nav.Link>
+                            <Nav.Link><NavLink className={this.state.navBarFont} to="/contact">CONTACT</NavLink></Nav.Link>
+                            <Nav.Link><NavLink className={this.state.navBarFont} to="/about">ABOUT</NavLink></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

@@ -5,6 +5,7 @@ import ServicePage from "../pages/ServicePage";
 import CoursePage from "../pages/CoursePage";
 import PortfolioPage from "../pages/PortfolioPage";
 import AboutPage from "../pages/AboutPage";
+import ContactPage from "../pages/ContactPage";
 
 
 class AppRoute extends Component {
@@ -12,14 +13,12 @@ class AppRoute extends Component {
         return (
             <Fragment>
                 <Switch>
-
                     <Route exact path="/" component={HomePage}/>
-                    <Route exact path="services" component={ServicePage}/>
-                    <Route path="course" component={CoursePage}/>
-                    <Route path="portfolio" component={PortfolioPage}/>
-                    <Route path="courses" component={CoursePage}/>
-                    <Route path="about" component={AboutPage}/>
-
+                    <Route exact path="/services" component={ServicePage}/>
+                    <Route exact path="/course" component={CoursePage}/>
+                    <Route exact path="/portfolio" component={PortfolioPage}/>
+                    <Route exact path="/contact" component={ContactPage}/>
+                    <Route exact path="/about" component={AboutPage}/>
                 </Switch>
             </Fragment>
         );
