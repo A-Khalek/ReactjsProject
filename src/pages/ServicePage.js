@@ -5,6 +5,9 @@ import ServicesDescription from "../component/ServicesDescription/ServicesDescri
 import Footer from "../component/Footer/Footer";
 
 class ServicePage extends Component {
+    componentDidMount() {
+        window.scroll(0,0)
+    }
     render() {
         return (
             <Fragment>
