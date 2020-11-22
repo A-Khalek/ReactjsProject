@@ -5,6 +5,10 @@ import Footer from "../component/Footer/Footer";
 import ConditionDetails from "../component/ConditionDetails/ConditionDetails";
 
 class ConditionPage extends Component {
+
+    componentDidMount() {
+        window.scroll(0,0)
+    }
     render() {
         return (
             <Fragment>

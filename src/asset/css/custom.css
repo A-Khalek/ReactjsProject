@@ -71,12 +71,14 @@
 }
 
 .navTitle{
+    text-decoration: none !important;
     font-family: 'Montserreat', sans-serif;
     font-size: 22px;
     color: #ffffffff !important;
     font-weight: 700;
 }
 .navTitleScroll{
+    text-decoration: none !important;
     font-family: 'Montserreat', sans-serif;
     font-size: 22px;
     color: #0073e6 !important;
@@ -95,6 +97,7 @@
     -o-transition: background-color 400ms linear;
     transition:background-color 400ms linear;
     background-color: #ffffff !important;
+    box-shadow: 0 0 6px 0 rgba(0,115,230,0.3);
 }
 .navItemColor{
     text-decoration: none !important;
@@ -329,4 +332,17 @@
     font-size: 18px;
     font-weight: 400;
 }
-
+.courseDetailsBtn{
+    font-family: 'Montserreat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #0073e6;
+}
+.courseDetailsBtn:hover{
+    font-size: 19px;
+}
+.courseDetailsTitle{
+    font-family: 'Montserreat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
