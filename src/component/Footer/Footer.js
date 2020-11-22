@@ -5,6 +5,7 @@ import {faFacebook} from "@fortawesome/free-brands-svg-icons";
 import {faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import {faPhone} from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom";
 
 class Footer extends Component {
     render() {
@@ -30,8 +31,8 @@ class Footer extends Component {
                         </Col>
                         <Col lg={3} md={6} sm={12} className="text-justify p-5">
                             <h4 className="clientName">Legal</h4>
-                           <Nav className="footerLink" to="/Refund" >Refund Policy</Nav><br/>
-                            <a href="#" className="footerLink">Terms And Condition</a><br/>
+                           <Link className="footerLink" to="/Refund" >Refund Policy</Link><br/>
+                            <Link to="/TermsCondition" className="footerLink">Terms And Condition</Link><br/>
                             <a href="#" className="footerLink">Privacy Policy</a>
                         </Col>
                     </Row>

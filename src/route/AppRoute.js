@@ -7,6 +7,7 @@ import PortfolioPage from "../pages/PortfolioPage";
 import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
 import RefundPage from "../pages/RefundPage";
+import ConditionPage from "../pages/ConditionPage";
 
 
 class AppRoute extends Component {
@@ -21,6 +22,7 @@ class AppRoute extends Component {
                     <Route exact path="/contact" component={ContactPage}/>
                     <Route exact path="/about" component={AboutPage}/>
                     <Route exact path="/Refund" component={RefundPage}/>
+                    <Route exact path="/TermsCondition" component={ConditionPage}/>
                 </Switch>
             </Fragment>
         );
