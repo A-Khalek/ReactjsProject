@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import recProjectImg from "../../asset/image/projImg.jpg";
+import {Link} from "react-router-dom";
 
 class PortfolioDescription extends Component {
     render() {
@@ -17,7 +18,11 @@ class PortfolioDescription extends Component {
                                        Some quick example text to build on the card title and make up the bulk of
                                        the card's content.
                                    </Card.Text>
-                                   <Button variant="primary">Details</Button>
+                                   <Link to="/projectDetails">
+                                       <Button variant="primary" >
+                                           Details
+                                       </Button>
+                                   </Link>
                                </Card.Body>
                            </Card>
                        </Col>
@@ -30,7 +35,11 @@ class PortfolioDescription extends Component {
                                        Some quick example text to build on the card title and make up the bulk of
                                        the card's content.
                                    </Card.Text>
-                                   <Button variant="primary">Details</Button>
+                                   <Link to="/projectDetails">
+                                       <Button variant="primary" >
+                                           Details
+                                       </Button>
+                                   </Link>
                                </Card.Body>
                            </Card>
                        </Col>
@@ -43,7 +52,11 @@ class PortfolioDescription extends Component {
                                        Some quick example text to build on the card title and make up the bulk of
                                        the card's content.
                                    </Card.Text>
-                                   <Button variant="primary">Details</Button>
+                                   <Link to="/projectDetails">
+                                       <Button variant="primary" >
+                                           Details
+                                       </Button>
+                                   </Link>
                                </Card.Body>
                            </Card>
                        </Col>
@@ -56,7 +69,11 @@ class PortfolioDescription extends Component {
                                        Some quick example text to build on the card title and make up the bulk of
                                        the card's content.
                                    </Card.Text>
-                                   <Button variant="primary">Details</Button>
+                                   <Link to="/projectDetails">
+                                       <Button variant="primary" >
+                                           Details
+                                       </Button>
+                                   </Link>
                                </Card.Body>
                            </Card>
                        </Col>
@@ -69,7 +86,11 @@ class PortfolioDescription extends Component {
                                        Some quick example text to build on the card title and make up the bulk of
                                        the card's content.
                                    </Card.Text>
-                                   <Button variant="primary">Details</Button>
+                                   <Link to="/projectDetails">
+                                       <Button variant="primary" >
+                                           Details
+                                       </Button>
+                                   </Link>
                                </Card.Body>
                            </Card>
                        </Col>
@@ -82,7 +103,11 @@ class PortfolioDescription extends Component {
                                        Some quick example text to build on the card title and make up the bulk of
                                        the card's content.
                                    </Card.Text>
-                                   <Button variant="primary">Details</Button>
+                                   <Link to="/projectDetails">
+                                       <Button variant="primary" >
+                                           Details
+                                       </Button>
+                                   </Link>
                                </Card.Body>
                            </Card>
                        </Col>
@@ -95,7 +120,11 @@ class PortfolioDescription extends Component {
                                        Some quick example text to build on the card title and make up the bulk of
                                        the card's content.
                                    </Card.Text>
-                                   <Button variant="primary">Details</Button>
+                                   <Link to="/projectDetails">
+                                       <Button variant="primary" >
+                                           Details
+                                       </Button>
+                                   </Link>
                                </Card.Body>
                            </Card>
                        </Col>

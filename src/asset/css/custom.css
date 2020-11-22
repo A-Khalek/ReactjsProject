@@ -196,6 +196,7 @@
     font-size: 18px;
     font-weight: 400;
 }
+
 .courseDesc {
     font-family: 'Raleway', sans-serif;
     font-size: 15px;
@@ -318,6 +319,14 @@
     color: white;
     font-size: 28px;
 }
-
-
+.productDetailsTitle{
+    font-family: 'Montserreat', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+.productDetailsSubTitle{
+    font-family: 'Montserreat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
 

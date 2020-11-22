@@ -42,7 +42,7 @@ class ContactDescription extends Component {
                             <p className="clientDesc">Address: E-36,Road-7, Arambag Residential Area , Pallabi,Mirpur, Dhaka 1216</p>
                             <p className="clientDesc"><FontAwesomeIcon icon={faEnvelope} /> khalek.raju.bd@gmail.com</p>
                             <p className="clientDesc"><FontAwesomeIcon icon={faPhone} /> +8801742556567</p>
-                            
+
                         </Col>
                     </Row>
                 </Container>
