@@ -1,3 +1,11 @@
+.logo{
+    text-decoration: none;
+    padding-top: 3px;
+}
+.logo:hover{
+    text-decoration: none;
+}
+
 .topFixedBanner{
     background-image: url("../image/banner.jpg");
     min-height: 553px;

@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import '../../asset/css/custom.css';
 import whiteLogo from '../../asset/image/navlogo.svg';
 import blueLogo from '../../asset/image/navlogoScroll.svg'
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 class TopNavigation extends Component {
     constructor(props) {
@@ -40,7 +40,7 @@ class TopNavigation extends Component {
         return (
             <>
                 <Navbar className={this.state.navBack} fixed="top" collapseOnSelect expand="lg"  variant={this.state.navVariant}>
-                    <Navbar.Brand href="#home" className={this.state.navBarTitle}><img src={this.state.navBarLogo}/> Md. Abdul Khalek</Navbar.Brand>
+                    <Link to="/" className={this.state.navBarTitle }><img src={this.state.navBarLogo}/> Md.Abdul Khalek</Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">

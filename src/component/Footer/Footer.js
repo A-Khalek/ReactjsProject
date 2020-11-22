@@ -15,8 +15,8 @@ class Footer extends Component {
                     <Row>
                         <Col lg={3} md={6} sm={12} className="text-justify p-5">
                             <h4 className="clientName">Follow Me</h4>
-                            <a href="#" className="socialNet"><FontAwesomeIcon icon={faFacebook} /> Facebook</a><br/>
-                            <a href="#" className="socialNet"><FontAwesomeIcon icon={faYoutube} /> YouTube</a>
+                            <a href="https://www.facebook.com/" className="socialNet"><FontAwesomeIcon icon={faFacebook} /> Facebook</a><br/>
+                            <a href="https://www.youtube.com/" className="socialNet"><FontAwesomeIcon icon={faYoutube} /> YouTube</a>
                         </Col>
                         <Col lg={3} md={6} sm={12} className="text-justify p-5">
                             <h4 className="clientName">Address</h4>
@@ -26,8 +26,8 @@ class Footer extends Component {
                         </Col>
                         <Col lg={3} md={6} sm={12} className="text-justify p-5">
                             <h4 className="clientName">Information</h4>
-                            <a href="#" className="footerLink">Contact Me</a><br/>
-                            <a href="#" className="footerLink">About Me</a>
+                            <Link to="/contact" className="footerLink">Contact Me</Link><br/>
+                            <Link to="/about" className="footerLink">About Me</Link>
                         </Col>
                         <Col lg={3} md={6} sm={12} className="text-justify p-5">
                             <h4 className="clientName">Legal</h4>
