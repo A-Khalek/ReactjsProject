@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {Container, Row,Col} from "react-bootstrap";
+import  {Container, Row, Col,Nav, NavLink} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook} from "@fortawesome/free-brands-svg-icons";
 import {faYoutube} from "@fortawesome/free-brands-svg-icons";
@@ -30,7 +30,7 @@ class Footer extends Component {
                         </Col>
                         <Col lg={3} md={6} sm={12} className="text-justify p-5">
                             <h4 className="clientName">Legal</h4>
-                           <a href="#" className="footerLink">Refund Policy</a><br/>
+                           <Nav className="footerLink" to="/Refund" >Refund Policy</Nav><br/>
                             <a href="#" className="footerLink">Terms And Condition</a><br/>
                             <a href="#" className="footerLink">Privacy Policy</a>
                         </Col>
