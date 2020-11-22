@@ -2,46 +2,41 @@ import React, {Component, Fragment} from 'react';
 import {Button, Col, Container, Form, Row} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
+import webLogo from "../../asset/image/web.svg";
+import mobileLogo from "../../asset/image/mobile.svg";
+import graphicsLogo from "../../asset/image/graphics.svg";
 
 class ServicesDescription extends Component {
     render() {
         return (
             <Fragment>
-                <Container  className="pt-5 pl-0">
-                    <h2 className="serviceNameTitle text-center">My Services</h2>
+                <Container className="text-center">
+                    <h2 className="serviceNameTitle">My Services</h2>
                     <Row>
-                        <Col lg={8} md={12} sm={12} className="pl-0">
-                            <h2 className="serviceName">Quick Connect</h2>
-                            <Form>
-                                <Form.Group controlId="formBasicEmail">
-                                    <Form.Label className="float-left">Name</Form.Label>
-                                    <Form.Control type="email" placeholder="Enter email" />
-                                </Form.Group>
-
-                                <Form.Group controlId="formBasicPassword">
-                                    <Form.Label className="float-left">Email Address</Form.Label>
-                                    <Form.Control type="password" placeholder="Password" />
-                                </Form.Group>
-
-                                <Form.Group controlId="exampleForm.ControlTextarea1">
-                                    <Form.Label className="float-left">Message</Form.Label>
-                                    <Form.Control as="textarea" rows={3} />
-                                </Form.Group>
-
-
-                                <Button variant="primary" type="submit">
-                                    Submit
-                                </Button>
-                            </Form>
+                        <Col lg={4} md={6} sm={12} >
+                            <div className="serviceCard text-center">
+                                <img src={webLogo}/>
+                                <h2 className="serviceName">Web Development</h2>
+                                < p className="serviceDescription">Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</p>
+                            </div>
                         </Col>
 
-                        <Col lg={4} md={12} sm={12} className="text-justify pl-3 ">
-                            <h2 className="serviceName">Discuss Now</h2>
-                            <p className="clientDesc">Address: E-36,Road-7, Arambag Residential Area , Pallabi,Mirpur, Dhaka 1216</p>
-                            <p className="clientDesc"><FontAwesomeIcon icon={faEnvelope} /> khalek.raju.bd@gmail.com</p>
-                            <p className="clientDesc"><FontAwesomeIcon icon={faPhone} /> +8801742556567</p>
+                        <Col lg={4} md={6} sm={12} >
+                            <div className="serviceCard text-center">
+                                <img src={mobileLogo}/>
+                                <h2 className="serviceName">Mobile App Development</h2>
+                                <p className="serviceDescription">Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</p>
+                            </div>
                         </Col>
 
+                        <Col lg={4} md={6} sm={12} >
+                            <div className="serviceCard text-center">
+                                <img src={graphicsLogo}/>
+                                <h2 className="serviceName">Graphics Design</h2>
+                                <p className="serviceDescription">Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</p>
+                            </div>
+                        </Col>
+                        
                     </Row>
                 </Container>
             </Fragment>

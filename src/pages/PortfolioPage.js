@@ -13,7 +13,7 @@ class PortfolioPage extends Component {
         return (
             <Fragment>
                 <TopNavigation Title="Portfolio"/>
-                <TopBanner pageTitle="Portfolio"/>
+                <PageTop pageTitle="Portfolio"/>
                 <PortfolioDescription/>
                 <Footer/>
             </Fragment>

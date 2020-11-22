@@ -13,7 +13,7 @@ class CoursePage extends Component {
         return (
             <Fragment>
                 <TopNavigation Title="Course"/>
-                <TopBanner pageTitle="Courses"/>
+                <PageTop pageTitle="Courses"/>
                 <AllCoursesDesc/>
                 <Footer/>
             </Fragment>
