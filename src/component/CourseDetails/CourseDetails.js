@@ -15,6 +15,7 @@ class CourseDetails extends Component {
                                 <li>Ultimate Dynamic product category</li>
                                 <li>Admin can add, edit, delete product dynamically</li>
                                 <li>Dynamic shipping pint facilites </li>
+                                <li>Admin can send special offer for special user.</li>
                                 <li>App force update system for server.</li>
                                 <li>User can make wish list.</li>
                             </ul>
