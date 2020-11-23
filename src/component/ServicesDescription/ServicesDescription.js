@@ -1,7 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {Button, Col, Container, Form, Row} from "react-bootstrap";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
+import {Col, Container, Row} from "react-bootstrap";
 import webLogo from "../../asset/image/web.svg";
 import mobileLogo from "../../asset/image/mobile.svg";
 import graphicsLogo from "../../asset/image/graphics.svg";
@@ -36,7 +34,7 @@ class ServicesDescription extends Component {
                                 <p className="serviceDescription">Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</p>
                             </div>
                         </Col>
-                        
+
                     </Row>
                 </Container>
             </Fragment>
