@@ -1,0 +1,29 @@
+class AppURL{
+
+
+    static BaseURL = 'http://localhost:8000';
+
+    static ChartData =this.BaseURL+'/ChartData';
+    static ClientReview =this.BaseURL+'/ClientReview';
+    static  ContactData = this.BaseURL+'/ContactData';
+
+    static CourseHome = this.BaseURL+'/CourseHome';
+    static CourseAll = this.BaseURL+'/CourseAll';
+    static CourseDetails = this.BaseURL+'CourseDetails';
+
+    static footerDetails = this.BaseURL+'/footerDetails';
+    static serviceDetails = this.BaseURL+'/serviceDetails';
+
+    static project3 = this.BaseURL+'/project3';
+    static projectSelectAll = this.BaseURL+'/projectSelectAll';
+    static projectDetails = this.BaseURL+'/projectDetails';
+
+    static videoHome = this.BaseURL+'/videoHome';
+    static totalProjectClient = this.BaseURL+'/totalProjectClient';
+
+    static tectDesc = this.BaseURL+'/tectDesc';
+    static homeTitle = this.BaseURL+'/homeTitle';
+
+}
+
+export  default AppURL;
