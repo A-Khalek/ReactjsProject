@@ -3,12 +3,23 @@ import {Container} from "react-bootstrap";
 import Col from "react-bootstrap/cjs/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
-
+import axios from  'axios';
 
 
 
 
 class TopBanner extends Component {
+
+    componentDidMount() {
+        axios.get('http://127.0.0.1:8000    /homeTitle')
+            .then(function (response){
+            console.log(response.data)
+        })
+            .catch(function (error){
+                console.log(error);
+            })
+    }
+
     render() {
         return (
             <Fragment>

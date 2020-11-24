@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import  {Container, Row, Col,Nav, NavLink} from "react-bootstrap";
+import  {Container, Row, Col} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook} from "@fortawesome/free-brands-svg-icons";
 import {faYoutube} from "@fortawesome/free-brands-svg-icons";
@@ -15,8 +15,8 @@ class Footer extends Component {
                     <Row>
                         <Col lg={3} md={6} sm={12} className="text-justify p-5">
                             <h4 className="clientName">Follow Me</h4>
-                            <a href="https://www.facebook.com/" className="socialNet"><FontAwesomeIcon icon={faFacebook} /> Facebook</a><br/>
-                            <a href="https://www.youtube.com/" className="socialNet"><FontAwesomeIcon icon={faYoutube} /> YouTube</a>
+                            <Link to="https://www.facebook.com/" className="socialNet"><FontAwesomeIcon icon={faFacebook} /> Facebook</Link><br/>
+                            <Link to="https://www.youtube.com/" className="socialNet"><FontAwesomeIcon icon={faYoutube} /> YouTube</Link>
                         </Col>
                         <Col lg={3} md={6} sm={12} className="text-justify p-5">
                             <h4 className="clientName">Address</h4>
@@ -38,7 +38,7 @@ class Footer extends Component {
                     </Row>
                 </Container>
                 <Container fluid={true} className="text-center copyrightSection">
-                    <a href="#" className="copyrightLink">khalek.com &copy; 2020-21</a>
+                    <Link to="#" className="copyrightLink">khalek.com &copy; 2020-21</Link>
                 </Container>
             </Fragment>
         );
