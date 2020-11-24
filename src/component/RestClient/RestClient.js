@@ -10,6 +10,6 @@ import axios from 'axios';
         }).catch(error=>{
             return null;
         })
-    }
+    }y
 }
 export default RestClient;
