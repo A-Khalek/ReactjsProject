@@ -3,12 +3,18 @@ import {Container} from "react-bootstrap";
 import Col from "react-bootstrap/cjs/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
-import axios from  'axios';
+import RestClient from "../RestClient/RestClient";
+import AppURL from "../../RestAPI/AppURL";
 
 
 
 
 class TopBanner extends Component {
+
+    componentDidMount() {
+        RestClient.getRequest(AppURL.homeTitle);
+    }
+
     render() {
         return (
             <Fragment>
