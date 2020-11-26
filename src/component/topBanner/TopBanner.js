@@ -23,6 +23,8 @@ export default  class TopBanner extends Component {
     componentDidMount() {
         RestClient.GetRequest(AppURL.homeTitle).then(result=>{
             this.setState({title:result[0]['home_title'],subTitle:result[0]['home_subtitle']})
+        }).catch(error=>{
+            this.setState({title:'?????',subTitle:'?????'})
         })
     }
 

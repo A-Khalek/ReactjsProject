@@ -3,6 +3,7 @@ class AppURL{
 
     static BaseURL = 'http://localhost:8000';
 
+    static homeTitle = this.BaseURL+'/homeTitle';
     static ChartData =this.BaseURL+'/ChartData';
     static ClientReview =this.BaseURL+'/ClientReview';
     static  ContactData = this.BaseURL+'/ContactData';
@@ -22,7 +23,7 @@ class AppURL{
     static totalProjectClient = this.BaseURL+'/totalProjectClient';
 
     static tectDesc = this.BaseURL+'/tectDesc';
-    static homeTitle = this.BaseURL+'/homeTitle';
+
 
 }
 
