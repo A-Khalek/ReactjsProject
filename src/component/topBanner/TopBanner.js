@@ -15,8 +15,8 @@ export default  class TopBanner extends Component {
     constructor() {
         super();
         this.state={
-            title:"",
-            subTitle:""
+            title:"...",
+            subTitle:"..."
         }
     }
 
