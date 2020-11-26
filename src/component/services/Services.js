@@ -36,7 +36,7 @@ class Services extends Component {
                                 < p className="serviceDescription">{myList.service_desc}</p>
                             </div>
                         </Col>
-        })
+       })
 
         return (
             <Fragment>
