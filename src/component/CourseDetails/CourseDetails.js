@@ -2,9 +2,16 @@ import React, {Component, Fragment} from 'react';
 import {Button, Col, Container, Row} from "react-bootstrap";
 import videoPoster from "../../asset/image/videoSintel.png";
 import {BigPlayButton, Player} from "video-react";
+import RestClient from "../RestClient/RestClient";
+import AppURL from "../../RestAPI/AppURL";
+import {Link} from "react-router-dom";
 
 class CourseDetails extends Component {
+
+
+
     render() {
+
         return (
             <Fragment>
                 <Container className="pt-5 mt-5">

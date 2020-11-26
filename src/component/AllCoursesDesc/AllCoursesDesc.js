@@ -1,89 +1,51 @@
 import React, {Component, Fragment} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
 import courseImg from "../../asset/image/courseImg.jpg";
+import {Link} from "react-router-dom";
+import RestClient from "../RestClient/RestClient";
+import AppURL from "../../RestAPI/AppURL";
 
 class AllCoursesDesc extends Component {
+
+    constructor() {
+        super();
+        this.state={
+            myData:[]
+        }
+    }
+
+    componentDidMount() {
+        RestClient.GetRequest(AppURL.CourseAll).then(result=>{
+            this.setState({myData:result})
+        })
+    }
+
     render() {
+
+        const myList = this.state.myData;
+        const myView = myList.map(myList=> {
+
+            return <Col lg={6} md={12} sm={12} className="p-2">
+                <Row>
+                    <Col lg={6} md={12} sm={12}>
+                        <img className="courseImg" src={myList.Img_link}/>
+                    </Col>
+                    <Col lg={6} md={12} sm={12}>
+                        <h4 className="courseTitle text-justify">{myList.short_title}</h4>
+                        <p className="courseDesc text-justify">{myList.short_desc}</p>
+                        <Link to="/CourseDetails" className="footerLink float-left courseDetailsBtn">Details</Link>
+                    </Col>
+                </Row>
+            </Col>
+        })
+
         return (
             <Fragment>
                 <Container className="mt-5 pt-5">
                     <Row>
-                        <Col lg={6} md={12} sm={12} className="p-2">
-                            <Row>
-                                <Col lg={6} md={12} sm={12}>
-                                    <img className="courseImg" src={courseImg}/>
-                                </Col>
-                                <Col lg={6} md={12} sm={12}>
-                                    <h4 className="courseTitle text-justify"> Web Development</h4>
-                                    <p className="courseDesc text-justify">I build native and cross platform mobile app for your business</p>
-                                    <a className="courseDetails float-left" href="#">Details</a>
-                                </Col>
-                            </Row>
-                        </Col>
-
-                        <Col lg={6} md={12} sm={12} className="p-2">
-                            <Row>
-                                <Col lg={6} md={12} sm={12}>
-                                    <img className="courseImg" src={courseImg}/>
-                                </Col>
-                                <Col lg={6} md={12} sm={12}>
-                                    <h4 className="courseTitle text-justify"> Web Development</h4>
-                                    <p className="courseDesc text-justify">I build native and cross platform mobile app for your business</p>
-                                    <a className="courseDetails float-left" href="#">Details</a>
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col lg={6} md={12} sm={12} className="p-2">
-                            <Row>
-                                <Col lg={6} md={12} sm={12}>
-                                    <img className="courseImg" src={courseImg}/>
-                                </Col>
-                                <Col lg={6} md={12} sm={12}>
-                                    <h4 className="courseTitle text-justify"> Web Development</h4>
-                                    <p className="courseDesc text-justify">I build native and cross platform mobile app for your business</p>
-                                    <a className="courseDetails float-left" href="#">Details</a>
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col lg={6} md={12} sm={12} className="p-2">
-                            <Row>
-                                <Col lg={6} md={12} sm={12}>
-                                    <img className="courseImg" src={courseImg}/>
-                                </Col>
-                                <Col lg={6} md={12} sm={12}>
-                                    <h4 className="courseTitle text-justify"> Web Development</h4>
-                                    <p className="courseDesc text-justify">I build native and cross platform mobile app for your business</p>
-                                    <a className="courseDetails float-left" href="#">Details</a>
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col lg={6} md={12} sm={12} className="p-2">
-                            <Row>
-                                <Col lg={6} md={12} sm={12}>
-                                    <img className="courseImg" src={courseImg}/>
-                                </Col>
-                                <Col lg={6} md={12} sm={12}>
-                                    <h4 className="courseTitle text-justify"> Web Development</h4>
-                                    <p className="courseDesc text-justify">I build native and cross platform mobile app for your business</p>
-                                    <a className="courseDetails float-left" href="#">Details</a>
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col lg={6} md={12} sm={12} className="p-2">
-                            <Row>
-                                <Col lg={6} md={12} sm={12}>
-                                    <img className="courseImg" src={courseImg}/>
-                                </Col>
-                                <Col lg={6} md={12} sm={12}>
-                                    <h4 className="courseTitle text-justify"> Web Development</h4>
-                                    <p className="courseDesc text-justify">I build native and cross platform mobile app for your business</p>
-                                    <a className="courseDetails float-left" href="#">Details</a>
-                                </Col>
-                            </Row>
-                        </Col>
+                        {myView}
                     </Row>
                 </Container>
-
             </Fragment>
         );
     }
