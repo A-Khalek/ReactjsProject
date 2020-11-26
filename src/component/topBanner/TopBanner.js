@@ -9,10 +9,21 @@ import AppURL from "../../RestAPI/AppURL";
 
 
 
-class TopBanner extends Component {
+
+export default  class TopBanner extends Component {
+
+    constructor() {
+        super();
+        this.state={
+            title:"",
+            subTitle:""
+        }
+    }
 
     componentDidMount() {
-        RestClient.getRequest(AppURL.homeTitle);
+        RestClient.GetRequest(AppURL.homeTitle).then(result=>{
+            this.setState({title:result[0]['home_title'],subTitle:result[0]['home_subtitle']})
+        })
     }
 
     render() {
@@ -23,8 +34,8 @@ class TopBanner extends Component {
                     <Container className="topContent">
                        <Row>
                            <Col className="text-center">
-                               <h1 className="topTitle">SOFTWARE ENGINEER</h1>
-                               <h4 className="topSubTitle">Mobile & Web Developer</h4>
+                               <h1 className="topTitle">{this.state.title}</h1>
+                               <h4 className="topSubTitle">{this.state.subTitle}</h4>
                                <Button variant="primary">More Info</Button>
                            </Col>
                        </Row>
@@ -36,4 +47,3 @@ class TopBanner extends Component {
     }
 }
 
-export default TopBanner;
