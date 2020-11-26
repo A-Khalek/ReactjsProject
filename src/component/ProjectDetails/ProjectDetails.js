@@ -6,8 +6,24 @@ import AppURL from "../../RestAPI/AppURL";
 import {Link} from "react-router-dom";
 
 class ProjectDetails extends Component {
+    constructor() {
+        super();
+        this.state={
+            myData:[]
+        }
+    }
+
+    componentDidMount() {
+        RestClient.GetRequest(AppURL.projectSelectAll).then(result=>{
+            this.setState({myData:result})
+        })
+    }
 
     render() {
+        const myList = this.state.myData;
+        const myView =   myList.map(myList=>{
+            return
+        })
 
         return (
             <Fragment>
