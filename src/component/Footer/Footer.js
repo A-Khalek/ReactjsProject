@@ -6,8 +6,36 @@ import {faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import {faPhone} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
+import RestClient from "../RestClient/RestClient";
+import AppURL from "../../RestAPI/AppURL";
 
 class Footer extends Component {
+
+    constructor() {
+        super();
+        this.state={
+            address:"..",
+            email:"..",
+            phone:"..",
+            facebook:"..",
+            youtube:"..",
+            footer_credit:".."
+        }
+    }
+
+    componentDidMount(){
+        RestClient.GetRequest(AppURL.footerDetails).then(result=>{
+            this.setState({
+                address:result[0]['address'],
+                email:result[0]['email'],
+                phone:result[0]['phone'],
+                facebook:result[0]['facebook'],
+                youtube:result[0]['youtube'],
+                footer_credit:result[0]['footer_credit']})
+        })
+    }
+
+
     render() {
         return (
             <Fragment>
@@ -20,9 +48,9 @@ class Footer extends Component {
                         </Col>
                         <Col lg={3} md={6} sm={12} className="text-justify p-5">
                             <h4 className="clientName">Address</h4>
-                            <p className="clientDesc">Address: E-36,Road-7, Arambag Residential Area , Pallabi,Mirpur, Dhaka 1216</p>
-                            <p className="clientDesc"><FontAwesomeIcon icon={faEnvelope} /> khalek.raju.bd@gmail.com</p>
-                            <p className="clientDesc"><FontAwesomeIcon icon={faPhone} /> +8801742556567</p>
+                            <p className="clientDesc">{this.state.address}</p>
+                            <p className="clientDesc"><FontAwesomeIcon icon={faEnvelope} /> {this.state.email}</p>
+                            <p className="clientDesc"><FontAwesomeIcon icon={faPhone} /> {this.state.phone}</p>
                         </Col>
                         <Col lg={3} md={6} sm={12} className="text-justify p-5">
                             <h4 className="clientName">Information</h4>
@@ -38,7 +66,7 @@ class Footer extends Component {
                     </Row>
                 </Container>
                 <Container fluid={true} className="text-center copyrightSection">
-                    <Link to="#" className="copyrightLink">khalek.com &copy; 2020-21</Link>
+                    <Link to="#" className="copyrightLink">{this.state.footer_credit}</Link>
                 </Container>
             </Fragment>
         );

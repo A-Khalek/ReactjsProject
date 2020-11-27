@@ -4,8 +4,32 @@ import {Row} from "react-bootstrap/cjs";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
 import { GoogleMap, Marker } from "react-google-maps"
+import RestClient from "../RestClient/RestClient";
+import AppURL from "../../RestAPI/AppURL";
 
 class ContactDescription extends Component {
+    constructor() {
+        super();
+        this.state={
+            address:"..",
+            email:"..",
+            phone:"..",
+            facebook:"..",
+            youtube:"..",
+            footer_credit:".."
+        }
+    }
+
+    componentDidMount(){
+        RestClient.GetRequest(AppURL.footerDetails).then(result=>{
+            this.setState({
+                address:result[0]['address'],
+                email:result[0]['email'],
+                phone:result[0]['phone'],
+                })
+        })
+    }
+
 
     render() {
         return (
@@ -39,9 +63,9 @@ class ContactDescription extends Component {
 
                         <Col lg={4} md={12} sm={12} className="text-justify pl-3">
                             <h2 className="serviceName">Discuss Now</h2>
-                            <p className="clientDesc">Address: E-36,Road-7, Arambag Residential Area , Pallabi,Mirpur, Dhaka 1216</p>
-                            <p className="clientDesc"><FontAwesomeIcon icon={faEnvelope} /> khalek.raju.bd@gmail.com</p>
-                            <p className="clientDesc"><FontAwesomeIcon icon={faPhone} /> +8801742556567</p>
+                            <p className="clientDesc">{this.state.address}</p>
+                            <p className="clientDesc"><FontAwesomeIcon icon={faEnvelope} />{this.state.email}</p>
+                            <p className="clientDesc"><FontAwesomeIcon icon={faPhone} />{this.state.phone}</p>
 
                         </Col>
                     </Row>
