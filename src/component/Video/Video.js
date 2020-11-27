@@ -5,17 +5,27 @@ import {faPlayCircle} from "@fortawesome/free-solid-svg-icons/faPlayCircle";
 import "video-react/dist/video-react.css";
 import {Player,BigPlayButton,ControlBar,ReplayControl} from 'video-react';
 import videoPoster from '../../asset/image/videoSintel.png'
+import RestClient from "../RestClient/RestClient";
+import AppURL from "../../RestAPI/AppURL";
 
 class Video extends Component {
     constructor() {
         super();
         this.state={
-            show:false
+            show:false,
+            videoDesc:"...",
+            videoURL:".."
         }
     }
 
     modalClose=()=>this.setState({show:false})
     modalOpen=()=>this.setState({show:true})
+
+    componentDidMount() {
+        RestClient.GetRequest(AppURL.videoHome).then(result=>{
+            this.setState({videoDesc:result[0]['video_desc'],videoURL:result[0]['video_url']})
+        })
+    }
 
 
     render() {
@@ -26,8 +36,8 @@ class Video extends Component {
                         <Col lg={12} md={12} sm={12}>
                             <div className="videoCard">
                                 <p className="videoTitle">How I Do</p>
-                                <p className="videoDesc">First i analysis the requirement of project. According to the requirement i make a proper technical analysis, then i build a software architecture. According to the planning i start coding. Testing is also going on with coding. Final testing take place after finishing coding part. After successful implementation i provide 6 month free bug fixing service for corresponding project.</p>
-                                <p><FontAwesomeIcon onClick={this.modalOpen} className="playBtn" icon={faPlayCircle} /></p>
+                                <p className="videoDesc">{this.state.videoDesc}</p>
+                                    <p><FontAwesomeIcon onClick={this.modalOpen} className="playBtn" icon={faPlayCircle} /></p>
                             </div>
                         </Col>
                     </Row>
@@ -35,7 +45,7 @@ class Video extends Component {
                 {/*This is video modal section*/}
                 <Modal size="lg" show={this.state.show} onHide={this.modalClose} animation={false}>
                    <Modal.Body>
-                        <Player poster={videoPoster} src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4">
+                        <Player poster={videoPoster} src={this.state.videoURL}>
                             <BigPlayButton position="center" />
                         </Player>
                     </Modal.Body>
