@@ -31,6 +31,16 @@ class ContactDescription extends Component {
       let  name =  document.getElementById("name").value;
       let  email =  document.getElementById("email").value;
       let  msg =  document.getElementById("msg").value;
+
+      let jsonObject = {name:name,email:email,msg:msg};
+
+      RestClient.PostRequest(AppURL.ContactSend).then(result=>{
+        alert(result)
+      }).catch(error=>{
+        alert("error")
+      })
+
+
     }
 
 

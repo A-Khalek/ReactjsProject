@@ -6,7 +6,7 @@ class AppURL{
     static homeTitle = this.BaseURL+'/homeTitle';
     static ChartData =this.BaseURL+'/ChartData';
     static ClientReview =this.BaseURL+'/ClientReview';
-    static  ContactData = this.BaseURL+'/ContactData';
+    static ContactSend = this.BaseURL+'/ContactSend';
 
     static CourseHome = this.BaseURL+'/CourseHome';
     static CourseAll = this.BaseURL+'/CourseAll';
