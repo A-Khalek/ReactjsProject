@@ -14,9 +14,6 @@ class ContactDescription extends Component {
             address:"..",
             email:"..",
             phone:"..",
-            facebook:"..",
-            youtube:"..",
-            footer_credit:".."
         }
     }
 
@@ -30,6 +27,13 @@ class ContactDescription extends Component {
         })
     }
 
+    sendContact(){
+      let  name =  document.getElementById("name").value;
+      let  email =  document.getElementById("email").value;
+      let  msg =  document.getElementById("msg").value;
+    }
+
+
 
     render() {
         return (
@@ -41,21 +45,21 @@ class ContactDescription extends Component {
                             <Form>
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Label className="float-left">Name</Form.Label>
-                                    <Form.Control type="email" placeholder="Enter email" />
+                                    <Form.Control id="name" type="email" placeholder="Enter email" />
                                 </Form.Group>
 
                                 <Form.Group controlId="formBasicPassword">
                                     <Form.Label className="float-left">Email Address</Form.Label>
-                                    <Form.Control type="password" placeholder="Password" />
+                                    <Form.Control id="email" type="email" placeholder="Email Address" />
                                 </Form.Group>
 
                                 <Form.Group controlId="exampleForm.ControlTextarea1">
                                     <Form.Label className="float-left">Message</Form.Label>
-                                    <Form.Control as="textarea" rows={3} />
+                                    <Form.Control id="msg" as="textarea" rows={3} />
                                 </Form.Group>
 
 
-                                <Button variant="primary" type="submit">
+                                <Button onClick={this.sendContact} variant="primary">
                                     Submit
                                 </Button>
                             </Form>

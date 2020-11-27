@@ -9,4 +9,14 @@ export default class RestClient  {
             return error;
         })
     }
+
+    static PostRequest(postUrl,postJson){
+        return  axios.get(postUrl,postJson).then(response=>{
+            return   response.data;
+        }).catch(error=>{
+            return error;
+        })
+    }
+
+
 }
