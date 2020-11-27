@@ -23,6 +23,8 @@ class AppURL{
     static totalProjectClient = this.BaseURL+'/totalProjectClient';
 
     static tectDesc = this.BaseURL+'/tectDesc';
+    static information = this.BaseURL + '/information';
+    static about = this.BaseURL + '/about';
 
 
 }
