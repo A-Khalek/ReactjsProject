@@ -11,13 +11,12 @@ export default class RestClient  {
     }
 
     static PostRequest(postUrl,postJson){
-
         let config={
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }
 
         return  axios.get(postUrl,postJson,config).then(response=>{
-            return   response.data;
+            return  response.data;
         }).catch(error=>{
             return error;
         })

@@ -34,7 +34,7 @@ class ContactDescription extends Component {
       let jsonObject = {name:name,email:email,msg:msg};
 
       RestClient.PostRequest(AppURL.ContactSend,JSON.stringify(jsonObject)).then(result=>{
-        alert("success")
+        alert(result)
       }).catch(error=>{
         alert("error")
       })
