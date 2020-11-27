@@ -3,7 +3,6 @@ import {Button, Col, Container, Form} from "react-bootstrap";
 import {Row} from "react-bootstrap/cjs";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
-import { GoogleMap, Marker } from "react-google-maps"
 import RestClient from "../RestClient/RestClient";
 import AppURL from "../../RestAPI/AppURL";
 
@@ -34,8 +33,8 @@ class ContactDescription extends Component {
 
       let jsonObject = {name:name,email:email,msg:msg};
 
-      RestClient.PostRequest(AppURL.ContactSend).then(result=>{
-        alert(result)
+      RestClient.PostRequest(AppURL.ContactSend,JSON.stringify(jsonObject)).then(result=>{
+        alert("success")
       }).catch(error=>{
         alert("error")
       })
@@ -55,7 +54,7 @@ class ContactDescription extends Component {
                             <Form>
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Label className="float-left">Name</Form.Label>
-                                    <Form.Control id="name" type="email" placeholder="Enter email" />
+                                    <Form.Control id="name" type="email" placeholder="Enter name" />
                                 </Form.Group>
 
                                 <Form.Group controlId="formBasicPassword">
