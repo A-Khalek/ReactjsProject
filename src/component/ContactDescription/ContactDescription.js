@@ -64,8 +64,8 @@ class ContactDescription extends Component {
                         <Col lg={4} md={12} sm={12} className="text-justify pl-3">
                             <h2 className="serviceName">Discuss Now</h2>
                             <p className="clientDesc">{this.state.address}</p>
-                            <p className="clientDesc"><FontAwesomeIcon icon={faEnvelope} />{this.state.email}</p>
-                            <p className="clientDesc"><FontAwesomeIcon icon={faPhone} />{this.state.phone}</p>
+                            <p className="clientDesc"><FontAwesomeIcon icon={faEnvelope} /> {this.state.email}</p>
+                            <p className="clientDesc"><FontAwesomeIcon icon={faPhone} /> {this.state.phone}</p>
 
                         </Col>
                     </Row>
