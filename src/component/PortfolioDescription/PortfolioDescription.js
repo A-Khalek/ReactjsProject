@@ -27,7 +27,7 @@ class PortfolioDescription extends Component {
                     <Card.Body>
                         <Card.Title className="projectCardTitle">{myList.project_name}</Card.Title>
                         <Card.Text className="projectCardTitleDesc">{myList.short_desc}</Card.Text>
-                        <Link to="/projectDetails">
+                        <Link to={"/projectDetails/"+myList.id}>
                             <Button variant="primary" >
                                 Details
                             </Button>
