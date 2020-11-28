@@ -14,7 +14,7 @@ export default class RestClient  {
         let config={
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }
-        return axios.get(postUrl,postJson,config).then(response=>{
+        return axios.post(postUrl,postJson,config).then(response=>{
             return  response.data;
         }).catch(error=>{
             return error;
