@@ -10,6 +10,7 @@ class ProjectDetails extends Component {
         super();
         this.state={
             MyProjectID:props.id,
+            MyProjectName:props.projectName,
             project_name:"",
             short_desc :"",
             project_feature: "",
