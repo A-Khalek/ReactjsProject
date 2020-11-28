@@ -17,7 +17,7 @@ class AppURL{
 
     static project3 = this.BaseURL+'/project3';
     static projectSelectAll = this.BaseURL+'/projectSelectAll';
-    static projectDetails = this.BaseURL+'/projectDetails';
+    static projectDetails = this.BaseURL+'/projectDetails/';
 
     static videoHome = this.BaseURL+'/videoHome';
     static totalProjectClient = this.BaseURL+'/totalProjectClient';

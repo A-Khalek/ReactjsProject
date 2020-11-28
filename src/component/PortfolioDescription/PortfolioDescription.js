@@ -5,9 +5,10 @@ import RestClient from "../RestClient/RestClient";
 import AppURL from "../../RestAPI/AppURL";
 
 class PortfolioDescription extends Component {
-    constructor() {
+    constructor(props) {
         super();
         this.state={
+            projectId:props.id,
             myData:[]
         }
     }
@@ -25,6 +26,7 @@ class PortfolioDescription extends Component {
                 <Card className="projectCard">
                     <Card.Img variant="top" className="recentProjectImg"  src={myList.img_one} />
                     <Card.Body>
+
                         <Card.Title className="projectCardTitle">{myList.project_name}</Card.Title>
                         <Card.Text className="projectCardTitleDesc">{myList.short_desc}</Card.Text>
                         <Link to={"/projectDetails/"+myList.id}>

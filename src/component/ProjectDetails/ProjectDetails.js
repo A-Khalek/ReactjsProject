@@ -1,55 +1,55 @@
 import React, {Component, Fragment} from 'react';
-import {Button, Card, Col, Container, Row} from "react-bootstrap";
-import projectDetailsImg from "../../asset/image/projectDetailsImg.webp";
+import {Button, Col, Container, Row} from "react-bootstrap";
 import RestClient from "../RestClient/RestClient";
 import AppURL from "../../RestAPI/AppURL";
-import {Link} from "react-router-dom";
+import ReactHtmlParser from 'react-html-parser';
+
 
 class ProjectDetails extends Component {
-    constructor() {
+    constructor(props) {
         super();
         this.state={
-            myData:[]
+            MyProjectID:props.id,
+            project_name:"",
+            short_desc :"",
+            project_feature: "",
+            live_review:"",
+            img_two:""
         }
     }
 
     componentDidMount() {
-        RestClient.GetRequest(AppURL.projectSelectAll).then(result=>{
-            this.setState({myData:result})
+        RestClient.GetRequest(AppURL.projectDetails+this.state.MyProjectID).then(result=>{
+            this.setState({
+                img_two:result[0]['img_two'],
+                short_desc:result[0]['short_desc'],
+                project_feature:result[0]['project_feature'],
+                live_review:result[0]['live_review'],
+                project_name:result[0]['project_name']
+            })
+        }).catch(error=>{
+
+            return error;
         })
     }
 
     render() {
-        const myList = this.state.myData;
-        const myView =   myList.map(myList=>{
-            return
-        })
+
 
         return (
             <Fragment>
                 <Container className="pt-5 mt-5">
                     <Row>
                         <Col lg={6} md={6} sm={12} >
-                            <img  className="courseImg" src={projectDetailsImg}/>
+                            <img  className="projectDtlsImg" src={this.state.img_two}/>
                         </Col>
                         <Col lg={6} md={6} sm={12}>
-                            <h1 className="productDetailsTitle">Foll Bazzar</h1>
-                            <h6 className="productDetailsSubTitle">Complete e-commerce app solution for selling fruit online. According to build quality, data loading speed this is the best one</h6>
+                            <h1 className="productDetailsTitle">{this.state.project_name}</h1>
+                            <h6 className="productDetailsSubTitle">{this.state.short_desc}</h6>
                             <ul>
-                                <li>Unlimited Dynamic Product Category</li>
-                                <li>Admin Can Add, Edit, Delete Product Dynamically</li>
-                                <li>Dynamic shipping point facilities</li>
-                                <li>Admin can send special offer for special user</li>
-                                <li>App force update system form server</li>
-                                <li>App can receive push notification anytime also after the app is closed.</li>
-                                <li>Admin can send free message in app inbox</li>
-                                <li>Admin can push notification to specific user</li>
-                                <li>User can make wishlist</li>
-                                <li>User can see order history and invoice alsov</li>
-                                <li>Dynamic Product Slider</li>
-                                <li>Video Blog</li>
-
+                                {ReactHtmlParser(this.state.project_feature)}
                             </ul>
+                            <Button variant="primary">More info</Button>
                         </Col>
                     </Row>
                 </Container>
