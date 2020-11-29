@@ -18,8 +18,7 @@ class CourseDetailsPage extends Component {
         window.scroll(0,0)
 
         RestClient.GetRequest(AppURL.CourseDetails+this.state.MyProjectID).then(result=>{
-            this.setState({CourseData:result
-            })
+            this.setState({CourseData:result})
         }).catch(error=>{
 
         })

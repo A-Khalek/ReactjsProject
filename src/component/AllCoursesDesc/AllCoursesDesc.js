@@ -1,6 +1,5 @@
 import React, {Component, Fragment} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import courseImg from "../../asset/image/courseImg.jpg";
 import {Link} from "react-router-dom";
 import RestClient from "../RestClient/RestClient";
 import AppURL from "../../RestAPI/AppURL";
