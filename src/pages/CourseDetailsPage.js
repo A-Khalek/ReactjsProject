@@ -1,6 +1,5 @@
 import React, {Component, Fragment} from 'react';
 import TopNavigation from "../component/topNavigation/TopNavigation";
-import TopBanner from "../component/topBanner/TopBanner";
 import Footer from "../component/Footer/Footer";
 import CourseDetails from "../component/CourseDetails/CourseDetails";
 import PageTop from "../component/PageTop/PageTop";

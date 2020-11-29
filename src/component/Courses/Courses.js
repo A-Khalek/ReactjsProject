@@ -34,7 +34,7 @@ class Courses extends Component {
                     <Col lg={6} md={12} sm={12}>
                         <h4 className="courseTitle text-justify">{myList.short_title}</h4>
                         <p className="courseDesc text-justify">{myList.short_desc}</p>
-                        <Link to="/CourseDetails" className="footerLink float-left courseDetailsBtn">Details</Link>
+                        <Link to={"/CourseDetails/"+myList.id} className="footerLink float-left courseDetailsBtn">Details</Link>
                     </Col>
                 </Row>
             </Col>

@@ -5,11 +5,18 @@ import {BigPlayButton, Player} from "video-react";
 
 
 class CourseDetails extends Component {
+    constructor({match}) {
+        super();
+        this.state={
+            MyCourseID:match.params.CourseId
+        }
+    }
 
 
 
     render() {
 
+        alert(this.state.MyProjectID)
         return (
             <Fragment>
                 <Container className="pt-5 mt-5">
