@@ -2,39 +2,54 @@ import React, {Component, Fragment} from 'react';
 import {Button, Col, Container, Row} from "react-bootstrap";
 import videoPoster from "../../asset/image/videoSintel.png";
 import {BigPlayButton, Player} from "video-react";
+import ReactHTMLParser from 'react-html-parser';
 
 
 class CourseDetails extends Component {
-    constructor({match}) {
-        super();
-        this.state={
-            MyCourseID:match.params.CourseId
-        }
-    }
+        constructor(props) {
+            super(props);
 
+        }
 
 
     render() {
 
-        alert(this.state.MyProjectID)
+
+            let ShortDesc="";
+            let LongDesc="";
+            let TotalLecture ="";
+            let TotalStudent ="";
+            let AllSkill="";
+            let VideoUrl="";
+            let ImgLink="";
+
+            let CourseDetailsArray =this.props.courseData;
+            if (CourseDetailsArray==1){
+
+
+                 ShortDesc= CourseDetailsArray[0]['short_desc'];;
+                 LongDesc= CourseDetailsArray[0]['long_title'];;
+                 TotalLecture = CourseDetailsArray[0]['total_lecture'];;
+                 TotalStudent = CourseDetailsArray[0]['total_student'];;
+                 AllSkill= CourseDetailsArray[0]['all_skill'];;
+                 VideoUrl= CourseDetailsArray[0]['video_url'];;
+                 ImgLink= CourseDetailsArray[0]['Img_link'];;
+
+            }
+
+
         return (
             <Fragment>
                 <Container className="pt-5 mt-5">
                     <Row>
                         <Col lg={6} md={6} sm={12}>
                             <h1 className="courseDetailsTitle" >Skill You Get</h1>
-                            <ul>
-                                <li>Ultimate Dynamic product category</li>
-                                <li>Admin can add, edit, delete product dynamically</li>
-                                <li>Dynamic shipping pint facilites </li>
-                                <li>Admin can send special offer for special user.</li>
-                                <li>App force update system for server.</li>
-                                <li>User can make wish list.</li>
-                            </ul>
+                            {ReactHTMLParser(LongDesc)}
+                            <p>{TotalStudent}</p>
                             <Button variant="primary">Buy Now</Button>
                         </Col>
                         <Col lg={6} md={6} sm={12}>
-                            <Player poster={videoPoster} src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4">
+                            <Player poster={videoPoster} src={ImgLink}>
                                 <BigPlayButton position="center" />
                             </Player>
                         </Col>

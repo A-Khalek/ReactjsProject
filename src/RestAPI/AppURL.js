@@ -10,7 +10,7 @@ class AppURL{
 
     static CourseHome = this.BaseURL+'/CourseHome';
     static CourseAll = this.BaseURL+'/CourseAll';
-    static CourseDetails = this.BaseURL+'CourseDetails';
+    static CourseDetails = this.BaseURL+'CourseDetails/';
 
     static footerDetails = this.BaseURL+'/footerDetails';
     static serviceDetails = this.BaseURL+'/serviceDetails';
