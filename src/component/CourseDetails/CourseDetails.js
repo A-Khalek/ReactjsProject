@@ -3,40 +3,46 @@ import {Button, Col, Container, Row} from "react-bootstrap";
 import videoPoster from "../../asset/image/videoSintel.png";
 import {BigPlayButton, Player} from "video-react";
 import ReactHTMLParser from 'react-html-parser';
+import RestClient from "../RestClient/RestClient";
+import AppURL from "../../RestAPI/AppURL";
 
 
 class CourseDetails extends Component {
-        constructor(props) {
-            super(props);
-
+    constructor(props) {
+        super(props);
+        this.state={
+            MyCourseID:props.id,
+            LongTitle:"",
+            ShortDesc:"",
+            LongDesc:"",
+            TotalLecture :"",
+            TotalStudent :"",
+            AllSkill:"",
+            VideoUrl:"",
+            ImgLink:"",
+            Moreinfo:"",
+            ShortTitle:""
         }
+    }
+
+    componentDidMount() {
+        RestClient.GetRequest(AppURL.CourseDetails+this.state.MyCourseID).then(result=>{
+            this.setState({
+                ShortDesc:result[0]['short_desc'],
+                LongDesc:result[0]['long_desc'],
+                AllSkill:result[0]['all_skill'],
+                VideoUrl:result[0]['video_url'],
+                ImgLink:result[0]['Img_link'],
+                moreinfo:result[0]['more_info']
+            })
+        }).catch(error=>{
+            return error;
+        })
+    }
+
 
 
     render() {
-
-
-            let ShortDesc="";
-            let LongDesc="";
-            let TotalLecture ="";
-            let TotalStudent ="";
-            let AllSkill="";
-            let VideoUrl="";
-            let ImgLink="";
-
-            let CourseDetailsArray =this.props.courseData;
-            if (CourseDetailsArray==1){
-
-
-                 ShortDesc= CourseDetailsArray[0]['short_desc'];;
-                 LongDesc= CourseDetailsArray[0]['long_title'];;
-                 TotalLecture = CourseDetailsArray[0]['total_lecture'];;
-                 TotalStudent = CourseDetailsArray[0]['total_student'];;
-                 AllSkill= CourseDetailsArray[0]['all_skill'];;
-                 VideoUrl= CourseDetailsArray[0]['video_url'];;
-                 ImgLink= CourseDetailsArray[0]['Img_link'];;
-
-            }
-
 
         return (
             <Fragment>
@@ -44,12 +50,13 @@ class CourseDetails extends Component {
                     <Row>
                         <Col lg={6} md={6} sm={12}>
                             <h1 className="courseDetailsTitle" >Skill You Get</h1>
-                            {ReactHTMLParser(LongDesc)}
-                            <p>{TotalStudent}</p>
+                            <h2 className="courseDetailsTitle">{this.state.LongTitle}</h2>
+                            {ReactHTMLParser(this.state.LongDesc)}
                             <Button variant="primary">Buy Now</Button>
                         </Col>
+
                         <Col lg={6} md={6} sm={12}>
-                            <Player poster={videoPoster} src={ImgLink}>
+                            <Player poster={videoPoster} src={this.state.VideoUrl}>
                                 <BigPlayButton position="center" />
                             </Player>
                         </Col>
