@@ -25,9 +25,10 @@ class AllCoursesDesc extends Component {
 // && this.state.error==false
     render() {
 
-        if(this.state.loading==false && this.state.error==false){
-            <Loading/>
+        if(this.state.loading==true && this.state.error==false ){
+            return  <Loading/>
         }
+
         else  {
             const myList = this.state.myData;
             const myView = myList.map(myList=> {
