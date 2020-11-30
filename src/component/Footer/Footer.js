@@ -30,7 +30,7 @@ class Footer extends Component {
 
     componentDidMount(){
 
-        if (this.state.error==null){
+        if (this.state.error==false){
             RestClient.GetRequest(AppURL.footerDetails).then(result=>{
                 this.setState({
                     address:result[0]['address'],
@@ -49,7 +49,6 @@ class Footer extends Component {
         else {
             this.setState({error:true})
         }
-
 
     }
 
