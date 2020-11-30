@@ -20,7 +20,7 @@ export default  class TopBanner extends Component {
             subTitle:"",
             loaderClass:"text-center",
             mainDivClass:"d-none",
-            
+
         }
     }
 
