@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import '../../asset/css/custom.css';
@@ -38,7 +38,7 @@ class TopNavigation extends Component {
 
     render() {
         return (
-            <>
+            <Fragment>
                 <Navbar className={this.state.navBack} fixed="top" collapseOnSelect expand="lg"  variant={this.state.navVariant}>
                     <Navbar.Brand  ><Link className={this.state.navBarTitle } to="/"><img src={this.state.navBarLogo}/> AirVoice Software Ltd.</Link> </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -57,7 +57,7 @@ class TopNavigation extends Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-            </>
+            </Fragment>
         );
     }
 }
