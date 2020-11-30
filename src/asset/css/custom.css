@@ -359,3 +359,7 @@
     height: 300px;
     width: 100%;
 }
+.LoaderAnimation{
+    width: 150px;
+    height: 150px;
+}
