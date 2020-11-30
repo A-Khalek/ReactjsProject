@@ -8,18 +8,21 @@ import {faPhone} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
 import RestClient from "../RestClient/RestClient";
 import AppURL from "../../RestAPI/AppURL";
+import Loading from "../Loading/Loading";
 
 class Footer extends Component {
 
     constructor() {
         super();
         this.state={
-            address:"..",
-            email:"..",
-            phone:"..",
-            facebook:"..",
-            youtube:"..",
-            footer_credit:".."
+            address:"",
+            email:"",
+            phone:"",
+            facebook:"",
+            youtube:"",
+            footer_credit:"",
+            loaderClass:"text-center",
+            mainDivClass:"d-none"
         }
     }
 
@@ -31,7 +34,10 @@ class Footer extends Component {
                 phone:result[0]['phone'],
                 facebook:result[0]['facebook'],
                 youtube:result[0]['youtube'],
-                footer_credit:result[0]['footer_credit']})
+                footer_credit:result[0]['footer_credit'],
+                loaderClass:"d-none",
+                mainDivClass:"text-justify p-5"
+            })
         })
     }
 
@@ -46,12 +52,20 @@ class Footer extends Component {
                             <a target="_blank" href={"//"+this.state.facebook} className="socialNet"><FontAwesomeIcon icon={faFacebook} /> Facebook</a><br/>
                             <a target="_blank" href={"//"+this.state.youtube} className="socialNet"><FontAwesomeIcon className="Youtube" icon={faYoutube} /> YouTube</a>
                         </Col>
-                        <Col lg={3} md={6} sm={12} className="text-justify p-5">
+
+                        <Col lg={3} md={6} sm={12} className={this.state.loaderClass}>
+                            <h4 className="clientName">Address</h4>
+                            <Loading/>
+                        </Col>
+
+                        <Col lg={3} md={6} sm={12} className={this.state.mainDivClass}>
                             <h4 className="clientName">Address</h4>
                             <p className="clientDesc">{this.state.address}</p>
                             <p className="clientDesc"><FontAwesomeIcon icon={faEnvelope} /> {this.state.email}</p>
                             <p className="clientDesc"><FontAwesomeIcon icon={faPhone} /> {this.state.phone}</p>
                         </Col>
+
+
                         <Col lg={3} md={6} sm={12} className="text-justify p-5">
                             <h4 className="clientName">Information</h4>
                             <Link to="/contact" className="footerLink">Contact Me</Link><br/>
