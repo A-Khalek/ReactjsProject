@@ -11,7 +11,9 @@ class AllCoursesDesc extends Component {
         super();
         this.state={
             myData:[],
-            loading:true
+            loading:true,
+            error:false
+
         }
     }
 
