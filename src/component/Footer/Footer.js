@@ -43,8 +43,8 @@ class Footer extends Component {
                     <Row>
                         <Col lg={3} md={6} sm={12} className="text-justify p-5">
                             <h4 className="clientName">Follow Me</h4>
-                            <Link target="_blank" to="//https://www.facebook.com/" className="socialNet"><FontAwesomeIcon icon={faFacebook} /> Facebook</Link><br/>
-                            <Link target="_blank" to="//https://www.youtube.com/" className="socialNet"><FontAwesomeIcon className="socialNetYoutube" icon={faYoutube} /> YouTube</Link>
+                            <a target="_blank" href={"//"+this.state.facebook} className="socialNet"><FontAwesomeIcon icon={faFacebook} /> Facebook</a><br/>
+                            <a target="_blank" href={"//"+this.state.youtube} className="socialNet"><FontAwesomeIcon className="Youtube" icon={faYoutube} /> YouTube</a>
                         </Col>
                         <Col lg={3} md={6} sm={12} className="text-justify p-5">
                             <h4 className="clientName">Address</h4>

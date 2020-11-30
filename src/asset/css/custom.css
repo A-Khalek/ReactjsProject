@@ -268,11 +268,7 @@
     font-weight:600;
     color: #0073e6;
 }
-.socialNetYoutube{
-    text-decoration: none !important;
-    font-family: 'Montserreat', sans-serif;
-    font-size: 15px;
-    font-weight:600;
+.Youtube{
     color: #ec0606;
 }
 .socialNet:hover{
