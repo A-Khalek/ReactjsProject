@@ -12,31 +12,31 @@ class CourseDetails extends Component {
         super(props);
         this.state={
             MyCourseID:props.id,
-            LongTitle:"",
-            ShortDesc:"",
-            LongDesc:"",
-            TotalLecture :"",
-            TotalStudent :"",
-            AllSkill:"",
+            // LongTitle:"",
+            SkillAll:"",
             VideoUrl:"",
-            ImgLink:"",
-            Moreinfo:"",
-            ShortTitle:""
+            // ImgLink:"",
+            MoreInfoURL:"",
+            // ShortTitle:""
         }
     }
 
     componentDidMount() {
         RestClient.GetRequest(AppURL.CourseDetails+this.state.MyCourseID).then(result=>{
-            this.setState({
-                ShortDesc:result[0]['short_desc'],
-                LongDesc:result[0]['long_desc'],
-                AllSkill:result[0]['all_skill'],
-                VideoUrl:result[0]['video_url'],
-                ImgLink:result[0]['Img_link'],
-                moreinfo:result[0]['more_info']
-            })
+            if(result==null){
+                this.setState({error:true,loading:false})
+            }else {
+                this.setState({
+                    VideoUrl: result[0]['video_url'] ,
+                    MoreInfoURL: result[0]['course_link'] ,
+                    SkillAll:result[0]['all_skill'] ,
+                    loading:false
+
+                });
+            }
+
         }).catch(error=>{
-            return error;
+            this.setState({error:true,loading:false})
         })
     }
 
@@ -50,8 +50,7 @@ class CourseDetails extends Component {
                     <Row>
                         <Col lg={6} md={6} sm={12}>
                             <h1 className="courseDetailsTitle" >Skill You Get</h1>
-                            <h2 className="courseDetailsTitle">{this.state.LongTitle}</h2>
-                            {ReactHTMLParser(this.state.LongDesc)}
+                            {ReactHTMLParser(this.state.SkillAll)}
                             <Button variant="primary">Buy Now</Button>
                         </Col>
 
