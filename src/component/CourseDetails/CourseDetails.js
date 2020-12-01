@@ -5,6 +5,8 @@ import {BigPlayButton, Player} from "video-react";
 import ReactHTMLParser from 'react-html-parser';
 import RestClient from "../RestClient/RestClient";
 import AppURL from "../../RestAPI/AppURL";
+import Loading from "../Loading/Loading";
+import WentWrong from "../WentWrong/WentWrong";
 
 
 class CourseDetails extends Component {
@@ -18,6 +20,7 @@ class CourseDetails extends Component {
             // ImgLink:"",
             MoreInfoURL:"",
             // ShortTitle:""
+            error:false
         }
     }
 
@@ -43,27 +46,36 @@ class CourseDetails extends Component {
 
 
     render() {
+        if (this.state.loading==true && this.state.error==false){
+            return <Loading/>
+        }
+        else if (this.state.loading==false){
+            return (
+                <Fragment>
+                    <Container className="pt-5 mt-5">
+                        <Row>
+                            <Col lg={6} md={6} sm={12}>
+                                <h1 className="courseDetailsTitle" >Skill You Get</h1>
+                                {ReactHTMLParser(this.state.SkillAll)}
+                                <Button variant="primary">Buy Now</Button>
+                            </Col>
 
-        return (
-            <Fragment>
-                <Container className="pt-5 mt-5">
-                    <Row>
-                        <Col lg={6} md={6} sm={12}>
-                            <h1 className="courseDetailsTitle" >Skill You Get</h1>
-                            {ReactHTMLParser(this.state.SkillAll)}
-                            <Button variant="primary">Buy Now</Button>
-                        </Col>
+                            <Col lg={6} md={6} sm={12}>
+                                <Player poster={videoPoster} src={this.state.VideoUrl}>
+                                    <BigPlayButton position="center" />
+                                </Player>
+                            </Col>
+                        </Row>
+                    </Container>
+                </Fragment>
+            );
+        }
+        else if (this.state.error==true){
+            return <WentWrong/>
+        }
 
-                        <Col lg={6} md={6} sm={12}>
-                            <Player poster={videoPoster} src={this.state.VideoUrl}>
-                                <BigPlayButton position="center" />
-                            </Player>
-                        </Col>
-                    </Row>
-                </Container>
-            </Fragment>
-        );
     }
+
 }
 
 export default CourseDetails;

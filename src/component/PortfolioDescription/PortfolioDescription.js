@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import RestClient from "../RestClient/RestClient";
 import AppURL from "../../RestAPI/AppURL";
 import Loading from "../Loading/Loading";
+import WentWrong from "../WentWrong/WentWrong";
 
 class PortfolioDescription extends Component {
     constructor(props) {
@@ -18,7 +19,13 @@ class PortfolioDescription extends Component {
 
     componentDidMount() {
         RestClient.GetRequest(AppURL.projectSelectAll).then(result=>{
-            this.setState({myData:result,loading:false})
+            if (result==null){
+                this.setState({error:true,loading:false})
+            }
+            else {
+                this.setState({myData:result,loading:false})
+            }
+
         }).catch(error=>{
             this.setState({error:true,loading:false})
         })
@@ -28,7 +35,8 @@ class PortfolioDescription extends Component {
 
         if(this.state.loading==true && this.state.error==false){
            return <Loading/>
-        }else {
+        }
+        else if (this.state.loading==false){
             const myList = this.state.myData;
             const myView =   myList.map(myList=>{
                 return <Col sm={12} md={6} lg={4} className="p-2">
@@ -58,9 +66,9 @@ class PortfolioDescription extends Component {
                 </Fragment>
             );
         }
-
-
-
+        else if (this.state.error==true){
+            return <WentWrong/>
+            }
     }
 }
 
