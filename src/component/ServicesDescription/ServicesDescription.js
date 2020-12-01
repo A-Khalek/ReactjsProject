@@ -3,6 +3,7 @@ import {Col, Container, Row} from "react-bootstrap";
 import RestClient from "../RestClient/RestClient";
 import AppURL from "../../RestAPI/AppURL";
 import Loading from "../Loading/Loading";
+import WentWrong from "../WentWrong/WentWrong";
 
 class ServicesDescription extends Component {
     constructor() {
@@ -16,7 +17,13 @@ class ServicesDescription extends Component {
 
     componentDidMount() {
         return RestClient.GetRequest(AppURL.serviceDetails).then(result=>{
-            this.setState({myData:result,loading:false})
+            if (result==null){
+                this.setState({error:true,loading:false})
+            }
+            else {
+                this.setState({myData:result,loading:false})
+            }
+
         }).catch(error=>{
             return this.setState({error:true,loading:false})
         })
@@ -27,7 +34,7 @@ class ServicesDescription extends Component {
 
         if (this.state.loading==true && this.state.error==false){
             return <Loading/>
-        }else {
+        }else if (this.state.loading== false) {
             let myList = this.state.myData;
             let myView = myList.map(myList=>{
                 return <Col lg={4} md={6} sm={12} >
@@ -51,7 +58,9 @@ class ServicesDescription extends Component {
             );
         }
 
-
+        else if (this.state.error==true){
+            return <WentWrong/>
+        }
     }
 }
 

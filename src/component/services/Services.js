@@ -21,7 +21,12 @@ class Services extends Component {
 
     componentDidMount() {
         return RestClient.GetRequest(AppURL.serviceDetails).then(result=>{
-            this.setState({myData:result,loader:false})
+            if (result==null){
+                this.setState({error:true})
+            }
+            else {
+                this.setState({myData:result,loader:false})
+            }
         }).catch(error=>{
             this.setState({error:true,loader:false})
         })
