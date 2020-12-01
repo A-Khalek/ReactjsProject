@@ -23,7 +23,7 @@ class PrivacyPolicy extends Component {
                 this.setState({error:true,loading:false})
             }
             else {
-                this.setState({policy:result[0]['privacy']})
+                this.setState({policy:result[0]['privacy'],loading:false})
             }
         }).catch(error=>{
             this.setState({error:true,loading:false})
@@ -31,10 +31,10 @@ class PrivacyPolicy extends Component {
     }
 
     render() {
-        if (this.state.loading==false && this.state.error== false){
+        if (this.state.loading==true && this.state.error == false){
             return <Loading/>
         }
-        else if (this.state.loading == true){
+        else if (this.state.loading == false) {
             return (
                 <Fragment>
                     <Container className="pt-5">
