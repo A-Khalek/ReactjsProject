@@ -1,11 +1,12 @@
 
 @media (min-width: 576px) {
-
+    .topTitle{font-size: 28px;}
+    .topSubTitle{font-size: 16px;}
 }
 
 
 @media (min-width: 768px) {
-
+    .topTitle{font-size: 36px;}
 }
 
 
@@ -14,5 +15,5 @@
 }
 
 @media (min-width: 1200px) {
-    
+
 }
