@@ -3,6 +3,7 @@ import {Col, Container, Row} from "react-bootstrap";
 import RestClient from "../RestClient/RestClient";
 import AppURL from "../../RestAPI/AppURL";
 import Loading from "../Loading/Loading";
+import WentWrong from "../WentWrong/WentWrong";
 
 class AboutDescription extends Component {
 
@@ -19,11 +20,18 @@ class AboutDescription extends Component {
 
     componentDidMount() {
         RestClient.GetRequest(AppURL.about).then(result=>{
-            this.setState({
-                myself:result[0]['myself'],
-                mission:result[0]['mission'],
-                vision:result[0]['vision'],
-                loading:false})
+            if (result==null){
+                this.setState({error:true})
+            }
+            else{
+                this.setState({
+                    myself:result[0]['myself'],
+                    mission:result[0]['mission'],
+                    vision:result[0]['vision'],
+                    loading:false})
+            }
+        }).catch(error=>{
+            this.setState({error:true})
         })
     }
 
@@ -32,7 +40,7 @@ class AboutDescription extends Component {
 
         if (this.state.loading==true && this.state.error==false){
             return <Loading/>
-        }else {
+        }else if(this.state.loading==false) {
             return (
                 <Fragment>
                     <Container className="pt-4 mt-4">
@@ -55,6 +63,9 @@ class AboutDescription extends Component {
                     </Container>
                 </Fragment>
             );
+        }
+        else if(this.state.error==true){
+            return <WentWrong/>
         }
 
 

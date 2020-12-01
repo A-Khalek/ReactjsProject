@@ -8,7 +8,8 @@ class ConditionDetails extends Component {
     constructor() {
         super();
         this.state={
-            condition:""
+            condition:"",
+            
         }
     }
 

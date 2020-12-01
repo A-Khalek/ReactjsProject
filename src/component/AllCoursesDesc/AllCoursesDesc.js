@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import RestClient from "../RestClient/RestClient";
 import AppURL from "../../RestAPI/AppURL";
 import Loading from "../Loading/Loading";
+import WentWrong from "../WentWrong/WentWrong";
 
 class AllCoursesDesc extends Component {
 
@@ -19,19 +20,25 @@ class AllCoursesDesc extends Component {
 
     componentDidMount() {
         RestClient.GetRequest(AppURL.CourseAll).then(result=>{
-            this.setState({myData:result,loading:false})
+            if (result==null){
+                this.setState({error:true})
+            }
+            else{
+                this.setState({myData:result,loading:false})
+            }
+
         }).catch(error=>{
             this.setState({ error:true,loading:false})
         })
     }
-// && this.state.error==false
+
     render() {
 
         if(this.state.loading==true && this.state.error==false ){
             return  <Loading/>
         }
 
-        else  {
+        else if (this.state.loading==false)  {
             const myList = this.state.myData;
             const myView = myList.map(myList=> {
 
@@ -59,7 +66,9 @@ class AllCoursesDesc extends Component {
                 </Fragment>
             );
         }
-
+        else if(this.state.error==true){
+            return <WentWrong/>
+        }
 
     }
 }

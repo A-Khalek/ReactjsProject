@@ -13,13 +13,22 @@ class ClientReview extends Component {
     constructor() {
         super();
         this.state={
-            myData:[]
+            myData:[],
+            error:false
+
         }
     }
 
     componentDidMount() {
         RestClient.GetRequest(AppURL.ClientReview).then(result=>{
-            this.setState({myData:result})
+            if (result==null){
+                this.setState({error:true})
+            }
+            else {
+                this.setState({myData:result})
+            }
+        }).catch(error=>{
+            this.setState({error:true})
         })
     }
 
@@ -61,8 +70,6 @@ class ClientReview extends Component {
                 }
             ]
         };
-
-
         const myList = this.state.myData;
         const myView = myList.map(myList=> {
 
